@@ -1,0 +1,143 @@
+:root {
+  --clr-primary: hsl(158, 36%, 37%);
+  --clr-primary-500: hsl(158, 36%, 20%);
+  --clr-secondary: hsl(30, 38%, 92%);
+
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --fontfam-accent: "Fraunces", serif;
+  --fontfam-main: "Montserrat", sans-serif;
+
+  --fontweight-regular: 500;
+  --fontweight-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  line-height: 1;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: var(--fontfam-main);
+  font-weight: var(--fontweight-regular);
+  color: var(--clr-neutral-400);
+  font-size: 0.875rem;
+  background-color: var(--clr-secondary);
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.product {
+  background-color: var(--clr-neutral-100);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  display: grid;
+  max-width: 600px;
+  padding: 1.5rem;
+}
+@media (min-width: 600px) {
+  .product {
+    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.product__content {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.product__category {
+  font-size: 0.825rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-size: 2rem;
+  font-family: var(--fontfam-accent);
+  color: var(--clr-neutral-900);
+}
+.product__price {
+  font-size: 2rem;
+  font-family: var(--fontfam-accent);
+  color: var(--clr-primary);
+}
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.75em 1.5em;
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fontweight-bold);
+  font-size: 0.925rem;
+  border-radius: 0.5rem;
+}
+
+.button[data-icon="shopping"]::before {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url(icon-cart.svg);
+}
+.button:is(:hover, :focus) {
+  background-color: var(--clr-primary-500);
+}
